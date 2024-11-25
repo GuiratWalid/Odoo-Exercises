@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="stock_reorder_report_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <main>
+                    <!-- Greeting message -->
+                    <h6>Dear,</h6>
+                    <br />
+                    <br />
+
+                    <!-- Conditional check for low stock data -->
+                    <t t-if="docs._get_low_stock_data()">
+                        <p>Here is your Stock Reorder Report for the date: <strong><t
+                  t-esc="datetime.date.today().strftime('%d/%m/%Y')"
+                /></strong></p>
+                        <br />
+
+                        <!-- Table structure -->
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Location</th>
+                                    <th>Alert Qty</th>
+                                    <th>Available Qty</th>
+                                    <th>(Available Qty - Alert Qty)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Loop through each stock item to display rows -->
+                                <t t-foreach="docs._get_low_stock_data()" t-as="doc">
+                                    <tr>
+                                        <td>
+                                            <!-- Article Name -->
+                                            <t t-esc="doc.product_id.name" />
+                                        </td>
+                                        <td>
+                                            <!-- Location Name -->
+                                            <t t-esc="doc.location_id.name" />
+                                        </td>
+                                        <td>
+                                            <!-- Alert Quantity -->
+                                            <t t-esc="doc.alert_qty" />
+                                        </td>
+                                        <td>
+                                            <!-- Available Quantity -->
+                                            <t t-esc="doc.quantity" />
+                                        </td>
+                                        <td>
+                                            <!-- (Available Qty - Alert Qty) -->
+                                            <t t-esc="doc.quantity - doc.alert_qty" />
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                    <t t-else="">
+                        <!-- No data message -->
+                        <p
+            >No data needed to be reordered in the stock for the date: <strong><t
+                  t-esc="datetime.date.today().strftime('%d/%m/%Y')"
+                /></strong></p>
+                    </t>
+
+                    <!-- Final greeting message -->
+                    <br />
+                    <br />
+                    <h6>Best regards,</h6>
+                </main>
+            </div>
+        </t>
+    </template>
+</odoo>

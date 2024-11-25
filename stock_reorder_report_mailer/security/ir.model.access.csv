@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+stock_reorder_report_mailer.access_product_quantity_alert_line,access_product_quantity_alert_line,stock_reorder_report_mailer.model_product_quantity_alert_line,base.group_user,1,1,1,1

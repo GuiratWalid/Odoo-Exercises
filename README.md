@@ -1,66 +1,53 @@
-# Exercise 1: Implement a REST API with Python
+# Exercise 2: Develop a Module to Send Stock Status Report by Email
 
 ## Task
-Implement a REST API with Python that provides the following information:
+Develop a module that sends a report via email about the stock status of storable items where a minimum alert quantity (Qty min) has been defined:
 
-### API Endpoints
+### What to Do:
 
-#### `/api/articles`
-**Method:** GET  
-**Description:** Lists all storable products (articles) in the database.  
+1. **Add a new page in the product form** 
+   Add a page in the product form where you can input the alert quantities by location for each storable product. 
+![Product Form](images/Description.png)
 
-**Example Response:**  
-```json
-[
-    {"id": 1, "name": "Starter-Set charcoal"},
-    {"id": 2, "name": "Starter-Set white"}
-]
-```
 
-#### `/api/articles/{id}`
-**Method:** GET  
-**Description:** Retrieves specific properties of a given product (article).
 
-**Example Response:**  
-```json
-{
-    "id": 1,
-    "name": "Starter-Set charcoal",
-    "description": "Starter-Satin Charcoal-two pods"
-}
-```
+2. **Develop a cron job to send a report by email**  
+   Create a cron job that sends a daily email with a PDF report listing all items where the available quantity minus the alert quantity is less than 0.
+   
+### Email Structure and Report to Send Every Day:
 
-#### `/api/wh_valuation/{wh-id}`
-**Method:** GET  
-**Description:** Lists the total cost of products by location within a chosen warehouse.
+**Email Body:**
+  
+  Dear [Recipient],
 
-**Example Response:**  
-```json
-{
-    "id": 2,
-    "name WH": "ISSY (Main WH)",
-    "total_cost": 6000,
-    "locations": [
-        {
-            "name": "Name of loc1",
-            "total_cost_products": 2000
-        },
-        {
-            "name": "Name of loc1/1",
-            "total_cost_products": 1700
-        },
-        {
-            "name": "Name of loc1/1/1",
-            "total_cost_products": 700
-        },
-        {
-            "name": "Name of loc1/1/2",
-            "total_cost_products": 1000
-        },
-        {
-            "name": "Name of loc1/2",
-            "total_cost_products": 300
-        }
-    ]
-}
-```
+Your Stock Reorder Report is attached.
+
+
+**Report Table Content (attached as PDF):**
+
+| Article | Location | Available Qty | Alert Qty | Available Qty - Alert Qty |
+|---------|----------|---------------|-----------|---------------------------|
+| Product A | Location 1 | 70 | 50 | -20 |
+| Product A | Location 2 | 20 | 21 | -1 |
+| Product B | Location 1 | 50 | 10 | -40 |
+
+- **Article:** Name of the product.
+- **Location:** Warehouse location where the product is stored.
+- **Available Qty:** The available quantity of the product.
+- **Alert Qty:** The alert quantity of the product.
+- **Available Qty - Alert Qty:** Difference between the available quantity and the alert quantity.
+
+### Requirements:
+- Implement a user interface for setting the alert quantities by location.
+- Create a cron job that runs daily to check if any storable items have a quantity below the alert level and generate the report.
+- Send the report via email in PDF format, as shown in the example.
+
+### Deliverables:
+- A working Odoo module that integrates the alert quantity feature in the product form.
+- A cron job that generates and sends the report every day.
+- A PDF attachment containing the stock reorder report.
+
+---
+
+**Good luck and happy coding!**
+

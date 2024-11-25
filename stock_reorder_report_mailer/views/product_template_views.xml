@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="product_template_form_view_inherited_alert_mailer" model="ir.ui.view">
+        <field name="name">product.template.product.inherited.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='variants']" position="before">
+                <page
+          name="product_quantity_alert"
+          string="Stock Notification - Product Quantity Alert"
+        >
+                    <field
+            name="product_qty_alert_line_ids"
+            widget="one2many"
+            context="{'show_attribute': False}"
+          >
+                        <list string="Product Quantity Alert Line" editable="bottom">
+                            <field name="location_id" />
+                            <field name="alert_qty" />
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
