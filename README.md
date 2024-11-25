@@ -6,12 +6,13 @@ Develop a module that sends a report via email about the stock status of storabl
 ### What to Do:
 
 1. **Add a new page in the product form** 
-   Add a page in the product form where you can input the alert quantities by location for each storable product. 
+   Add a page in the product form where you can input the alert quantities by location for each storable product.
+   
 ![Product Form](images/Description.png)
 
 
 
-2. **Develop a cron job to send a report by email**  
+3. **Develop a cron job to send a report by email**  
    Create a cron job that sends a daily email with a PDF report listing all items where the available quantity minus the alert quantity is less than 0.
    
 ### Email Structure and Report to Send Every Day:
