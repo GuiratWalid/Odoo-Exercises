@@ -12,7 +12,7 @@ Develop a module that sends a report via email about the stock status of storabl
 
 
 
-3. **Develop a cron job to send a report by email**  
+2. **Develop a cron job to send a report by email**  
    Create a cron job that sends a daily email with a PDF report listing all items where the available quantity minus the alert quantity is less than 0.
    
 ### Email Structure and Report to Send Every Day:
