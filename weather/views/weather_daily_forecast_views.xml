@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="weather_daily_forecast_form_view" model="ir.ui.view">
+        <field name="name">weather.daily.forecast.form</field>
+        <field name="model">weather.daily.forecast</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <div>
+                        <h3>
+                            <field name="date"/>
+                        </h3>
+                        <h1>
+                            <field name="temp_current"/>
+                        </h1>
+                    </div>
+
+                    <group>
+
+                        <group>
+                            <field name="temp_min"/>
+                            <field name="temp_current"/>
+                        </group>
+
+                        <group>
+                            <field name="temp_max"/>
+                            <field name="sunrise"/>
+                            <field name="sunset"/>
+                        </group>
+
+                        <group>
+                            <field name="condition"/>
+                            <field name="location_id"/>
+                        </group>
+
+                        <notebook>
+
+                            <page name="hourly_forecast" string="Hourly Forecast">
+
+                                <field name="hourly_forecast_ids">
+                                    <list>
+                                        <field name="time"/>
+                                        <field name="temperature" string="Temp"/>
+                                        <field name="feels_like"/>
+                                        <field name="condition"/>
+                                        <field name="uv_index"/>
+                                    </list>
+                                </field>
+
+                            </page>
+
+                            <page name="current_condition" string="Current Condition">
+                                <group name="wind" string="Wind">
+                                    <group>
+                                        <field name="wind_current"/>
+                                        <field name="wind_degree"/>
+                                        <field name="wind_direction"/>
+                                    </group>
+                                    <group>
+                                        <field name="wind_max"/>
+                                        <field name="wind_min"/>
+                                    </group>
+                                </group>
+
+                                <group name="humidity" string="Humidity">
+                                    <field name="humidity"/>
+                                </group>
+
+                                <group name="uv_index" string="UV Index">
+                                    <field name="uv_index"/>
+                                </group>
+
+                                <group name="pressure" string="Pressure">
+                                    <field name="pressure"/>
+                                </group>
+
+                            </page>
+
+                        </notebook>
+
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="weather_daily_forecast_action" model="ir.actions.act_window">
+        <field name="name">Daily Forecasts</field>
+        <field name="res_model">weather.daily.forecast</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

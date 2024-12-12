@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="get_weather_forecast_view_form" model="ir.ui.view">
+        <field name="name">get.weather.forecast.form</field>
+        <field name="model">get.weather.forecast</field>
+        <field name="arch" type="xml">
+            <form>
+                <group col="1">
+                    <field name="date_from"/>
+                    <field name="days_forecast"/>
+                    <field name="location_id"/>
+                </group>
+                <footer>
+                    <button string="Generate Weather Forecast"
+                            name="generate_weather_forecast"
+                            type="object"
+                            class="btn-primary"/>
+                    <button string="Discard"
+                            class="btn-secondary"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="generate_weather_forecast_action" model="ir.actions.act_window">
+        <field name="name">Generate Weather Forecast</field>
+        <field name="res_model">get.weather.forecast</field>
+        <field name="view_mode">form</field>
+    </record>
+
+</odoo>

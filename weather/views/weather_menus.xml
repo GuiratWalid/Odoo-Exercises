@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Weather"
+              id="weather_menu"
+              sequence="30"
+              web_icon="weather,static/description/icon.png"
+    />
+
+    <menuitem name="Forecasts"
+              id="forecast_menu"
+              parent="weather_menu"
+              sequence="10"
+    >
+        <menuitem name="Daily Forecasts"
+                  id="daily_forecast_menu"
+                  action="weather_daily_forecast_action"
+                  sequence="10"
+        />
+        <menuitem name="Generate Weather Forecast"
+                  id="generate_weather_forecast_menu"
+                  action="generate_weather_forecast_action"
+                  sequence="20"
+        />
+    </menuitem>
+
+    <menuitem name="Configurations"
+              id="configurations_menu"
+              parent="weather_menu"
+              sequence="20"
+    >
+        <menuitem name="Settings"
+                  id="weather_config_settings_menu"
+                  action="weather_config_settings_action"
+                  sequence="10"
+        />
+        <menuitem name="Weather Locations"
+                  id="weather_location_menu"
+                  action="weather_location_action"
+                  sequence="20"
+        />
+    </menuitem>
+
+</odoo>
