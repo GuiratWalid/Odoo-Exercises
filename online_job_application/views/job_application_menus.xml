@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+            id="online_job_application_menu"
+            name="Job Applications"
+            sequence="50"
+            web_icon="online_job_application,static/description/icon.png"
+    />
+    <menuitem
+            id="dashboard_menu"
+            name="Dashboard"
+            parent="online_job_application_menu"
+            sequence="10"
+            action="online_job_dashboard_action"
+    />
+    <menuitem
+            id="job_application_menu"
+            name="Applications"
+            parent="online_job_application_menu"
+            sequence="20"
+            action="job_application_action"
+    />
+    <menuitem
+            id="job_position_menu"
+            name="Job Positions"
+            parent="online_job_application_menu"
+            sequence="30"
+            action="job_position_action"
+    />
+
+</odoo>

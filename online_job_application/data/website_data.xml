@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="website_menu_job_positions" model="website.menu">
+            <field name="name">Job Positions</field>
+            <field name="url">/job_positions</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">20</field>
+        </record>
+
+    </data>
+</odoo>

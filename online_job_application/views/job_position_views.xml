@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="job_position_form_view" model="ir.ui.view">
+        <field name="name">job.position.form.view</field>
+        <field name="model">job.position</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <!-- === Stat Buttons === -->
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_toggle_is_published"
+                                invisible="not is_published"
+                                class="oe_stat_button"
+                                type="object"
+                                icon="fa-globe">
+                            <div class="o_stat_info o_field_widget">
+                                <span class="o_stat_text text-success">Published</span>
+                            </div>
+                        </button>
+                        <button name="action_toggle_is_published"
+                                invisible="is_published"
+                                class="oe_stat_button"
+                                type="object"
+                                icon="fa-eye-slash">
+                            <div class="o_stat_info o_field_widget">
+                                <span class="o_stat_text text-danger">Unpublished</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="location"/>
+                        <field name="description"/>
+                        <notebook>
+                            <page name="applications" string="Applications">
+                                <field name="application_ids">
+                                    <list>
+                                        <field name="reference"/>
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                        <field name="phone"/>
+                                        <field name="resume_filename" string="Resume"/>
+                                        <field name="state"
+                                               widget="badge"
+                                               decoration-muted="state == 'received'"
+                                               decoration-info="state  == 'in_review'"
+                                               decoration-primary="state  == 'interview'"
+                                               decoration-success="state == 'accepted'"
+                                               decoration-danger="state == 'rejected'"
+                                        />
+                                        <field name="application_date"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="job_position_list_view" model="ir.ui.view">
+        <field name="name">job.position.list.view</field>
+        <field name="model">job.position</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="location"/>
+                <field name="is_published" string="Published" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="job_position_action" model="ir.actions.act_window">
+        <field name="name">Positions</field>
+        <field name="res_model">job.position</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

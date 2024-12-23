@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <record id="email_template_application_status" model="mail.template">
+            <field name="name">Application Status Update</field>
+            <field name="description">
+                This mail is sent when an application status is updated.
+            </field>
+            <field name="model_id" ref="online_job_application.model_job_application"/>
+            <field name="subject">
+                Your Application Status for "{{object.job_position_id.name or ''}}" Has Changed
+            </field>
+            <field name="email_from">{{user.company_id.email or ''}}</field>
+            <field name="email_to">{{object.email or ''}}</field>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear
+                        <span t-out="object.name"/>,
+                    </p>
+                    <br/>
+                    <p>Your application status for the position <strong><span t-out="object.job_position_id.name"/></strong> has been updated:</p>
+                    <ul>
+                        <li>
+                            Status:
+                            <strong><span t-out="object.state"/></strong>
+                        </li>
+                    </ul>
+                    <p>Thank you for your interest in our company.</p>
+                    <br/>
+                    <p>Best regards,</p>
+                    <p>The Recruitment Team</p>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

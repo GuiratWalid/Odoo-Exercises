@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="online_job_application.JobDashboard">
+        <div class="o_dashboard">
+            <!-- Header -->
+            <center>
+                <h1 style="margin:20px;">Online Job Application Dashboard</h1>
+            </center>
+
+            <!-- Cards Section -->
+            <div class="o_dashboard_cards" style="display: flex; justify-content: space-around; margin: 20px; text-align: center;">
+                <div class="o_card bg-primary w-25" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; color: #fff;">
+                    <h3 style="color: #fff;">Total Candidates</h3>
+                    <span>
+                        <t t-esc="state.totalCandidates"/>
+                    </span>
+                </div>
+                <div class="o_card bg-primary w-25" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; color: #fff;">
+                    <h3 style="color: #fff;">Total Jobs</h3>
+                    <span>
+                        <t t-esc="state.totalJobs"/>
+                    </span>
+                </div>
+                <div class="o_card bg-success w-25" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; color: #fff;">
+                    <h3 style="color: #fff;">Published Jobs</h3>
+                    <span>
+                        <t t-esc="state.publishedJobs"/>
+                    </span>
+                </div>
+                <div class="o_card bg-danger w-25" style="border: 1px solid #ccc; padding: 20px; border-radius: 10px; color: #fff;">
+                    <h3 style="color: #fff;">Unpublished Jobs</h3>
+                    <span>
+                        <t t-esc="state.unpublishedJobs"/>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="o_dashboard_table" style="margin: 20px; text-align: center;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Job Position</th>
+                            <th>Total Applications</th>
+                            <th>Received Applications</th>
+                            <th>In Review Applications</th>
+                            <th>Interview Applications</th>
+                            <th>Accepted Applications</th>
+                            <th>Rejected Applications</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="state.jobData" t-as="job" t-key="job.position_id">
+                            <tr>
+                                <td>
+                                    <t t-esc="job.position_id"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.position_name"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.total_applications"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.received_applications"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.in_review_applications"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.interview_applications"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.accepted_applications"/>
+                                </td>
+                                <td>
+                                    <t t-esc="job.rejected_applications"/>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </t>
+</templates>

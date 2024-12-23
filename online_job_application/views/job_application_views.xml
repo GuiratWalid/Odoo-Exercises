@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="job_application_form_view" model="ir.ui.view">
+        <field name="name">job.application.form.view</field>
+        <field name="model">job.application</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="review_action"
+                            invisible="state in('in_review', 'interview', 'accepted', 'rejected')" type="object"
+                            string="Review"
+                            data-hotkey="w"
+                            class="btn-info"
+                    />
+                    <button name="interview_action"
+                            invisible="state in('interview', 'accepted', 'rejected')" type="object"
+                            string="Interview"
+                            data-hotkey="w"
+                            class="btn-primary"
+                    />
+                    <button name="accept_action"
+                            invisible="state in('accepted', 'rejected')" type="object"
+                            string="Accept"
+                            data-hotkey="w"
+                            class="btn-success"
+                    />
+                    <button name="reject_action"
+                            invisible="state in('accepted', 'rejected')" type="object"
+                            string="Reject"
+                            data-hotkey="w"
+                            class="btn-danger"
+                    />
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="received,in_review,interview,accepted,rejected"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="reference"/>
+                        </group>
+                        <group>
+                            <field name="application_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="job_position_id"/>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="resume_filename" invisible="1"/>
+                        <field name="resume" filename="resume_filename"/>
+                        <field name="cover_letter"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="job_application_list_view" model="ir.ui.view">
+        <field name="name">job.application.list.view</field>
+        <field name="model">job.application</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="reference"/>
+                <field name="job_position_id"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="resume_filename" string="Resume"/>
+                <field name="state"
+                       widget="badge"
+                       decoration-muted="state == 'received'"
+                       decoration-info="state  == 'in_review'"
+                       decoration-primary="state  == 'interview'"
+                       decoration-success="state == 'accepted'"
+                       decoration-danger="state == 'rejected'"
+                />
+                <field name="application_date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="job_application_action" model="ir.actions.act_window">
+        <field name="name">Applications</field>
+        <field name="res_model">job.application</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

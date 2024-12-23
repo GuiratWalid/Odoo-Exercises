@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="job_positions_page" name="Job Positions Page">
+        <t t-call="website.layout">
+            <div class="container my-5">
+                <h1 class="text-center">Available Job Positions</h1>
+                <div class="row mt-4">
+                    <!-- Check if the job positions exists -->
+                    <t t-if="job_positions">
+                        <t t-foreach="job_positions" t-as="job_position">
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <t t-esc="job_position.name"/>
+                                        </h5>
+                                        <p class="card-text">
+                                            <t t-esc="job_position.description"/>
+                                        </p>
+                                        <p class="text-muted">
+                                            <t t-esc="job_position.location"/>
+                                        </p>
+                                        <a t-att-href="'/apply/%s' % job_position.id" class="btn btn-primary mt-2">
+                                            Apply
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                    <!-- Alert if no available job position -->
+                    <t t-else="">
+                        <div class="col-12">
+                            <div class="alert alert-warning text-center" role="alert">
+                                No job positions available at the moment. Please check back later!
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

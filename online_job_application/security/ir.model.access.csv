@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+online_job_application.access_job_application,access_job_application,online_job_application.model_job_application,base.group_user,1,1,1,1
+online_job_application.access_job_position,access_job_position,online_job_application.model_job_position,base.group_user,1,1,1,1

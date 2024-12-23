@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="job_application_form" name="Application Form">
+        <t t-call="website.layout">
+            <div class="container my-5">
+                <h1 class="text-center mb-4">Apply for a Job</h1>
+                <form action="/submit_application" method="post" enctype="multipart/form-data" class="needs-validation"
+                      novalidate="1">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <input type="hidden" name="job_position_id" t-att-value="job_position.id"/>
+
+                    <div class="form-group mb-3 w-75 mx-auto">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required="True"
+                               placeholder="Enter your name"/>
+                    </div>
+
+                    <div class="form-group mb-3 w-75 mx-auto">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required="True"
+                               placeholder="Enter your email"/>
+                    </div>
+
+                    <div class="form-group mb-3 w-75 mx-auto">
+                        <label for="phone" class="form-label">Phone:</label>
+                        <input type="text" class="form-control" id="phone" name="phone"
+                               placeholder="Enter your phone number"/>
+                    </div>
+
+                    <div class="form-group mb-3 w-75 mx-auto">
+                        <label for="resume" class="form-label">Resume:</label>
+                        <input type="file" class="form-control" id="resume" name="resume" required="True"/>
+                    </div>
+
+                    <div class="form-group mb-4 w-75 mx-auto">
+                        <label for="cover_letter" class="form-label">Cover Letter:</label>
+                        <textarea class="form-control" id="cover_letter" name="cover_letter" rows="4"
+                                  placeholder="Write your cover letter"></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn w-25" style="background-color: #714B67; color: #FFF;">Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="job_application_success" name="Application Success">
+        <t t-call="website.layout">
+            <div class="container my-5">
+                <div class="alert alert-success text-center py-5" role="alert">
+                    <h1 class="display-5">Thank you for your application!</h1>
+                    <p>To track your application, please keep the following reference:
+                        <strong t-esc="reference"/>
+                    </p>
+                    <p class="lead mt-3">We will get back to you shortly.</p>
+                    <a href="/" class="btn btn-primary mt-4">Return to Home</a>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>
