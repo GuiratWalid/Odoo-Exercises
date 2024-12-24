@@ -1,70 +1,22 @@
-# Exercise 1: Implement a REST API with Python
+# Exercise 5: Recruitment Process Automation
 
 ## Task
-Implement a REST API with Python that provides the following information:
+Set up Odoo to automate key aspects of the recruitment process, ensuring efficiency and accuracy throughout. The aim is to streamline workflows, reduce manual intervention, and enhance the candidate management experience.
 
-### API Endpoints
+### What to Do:
 
-#### `/api/articles`
-**Method:** GET  
-**Description:** Lists all storable products (articles) in the database.  
+1.**Creating a Custom Module**
 
-**Example Response:**  
-```json
-[
-    {"id": 1, "name": "Starter-Set charcoal"},
-    {"id": 2, "name": "Starter-Set white"}
-]
-```
+    * Develop a custom Odoo module to enable candidates to apply online through a dedicated form.
 
-#### `/api/articles/{id}`
-**Method:** GET  
-**Description:** Retrieves specific properties of a given product (article).
+2. **Managing Process Stages**
+   
+    * Set up a system to track the status of applications (e.g., application received, under review, interview scheduled, accepted/rejected).
+    * Implement a recruitment workflow to allow HR to easily update the status.
 
-**Example Response:**  
-```json
-{
-    "id": 1,
-    "name": "Starter-Set charcoal",
-    "description": "Starter-Satin Charcoal-two pods"
-}
-```
-
-#### `/api/wh_valuation/{wh-id}`
-**Method:** GET  
-**Description:** Lists the total cost of products by location within a chosen warehouse.
-
-**Example Response:**  
-```json
-{
-    "id": 2,
-    "name WH": "ISSY (Main WH)",
-    "total_cost": 6000,
-    "locations": [
-        {
-            "name": "Name of loc1",
-            "total_cost_products": 2000
-        },
-        {
-            "name": "Name of loc1/1",
-            "total_cost_products": 1700
-        },
-        {
-            "name": "Name of loc1/1/1",
-            "total_cost_products": 700
-        },
-        {
-            "name": "Name of loc1/1/2",
-            "total_cost_products": 1000
-        },
-        {
-            "name": "Name of loc1/2",
-            "total_cost_products": 300
-        }
-    ]
-}
-```
-
+3. **HR Dashboard**
+   
+   * Create a dashboard to quickly visualize the status of recruitments (number of candidates per position, progress of the process, etc.).
 
 ---
 
