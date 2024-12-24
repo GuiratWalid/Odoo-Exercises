@@ -1,4 +1,4 @@
-# Exercise 5: Add the contact type feature
+# Exercise 4: Add the contact type feature
 
 ## Task
 Implement an Odoo module to enable the creation of contacts with a specific type (e.g., Prospect, Client, Partner, Supplier, etc.) and allow the management of sub-contacts.
