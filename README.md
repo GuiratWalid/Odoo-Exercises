@@ -11,6 +11,7 @@ Implement an Odoo module to enable the creation of contacts with a specific type
     * **Client**
     * **Partner**
     * **Supplier**
+      
     The field must be visible when creating or editing a contact.
 
 2. **Classify Contacts by Type**
