@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
 
-    <record id="send_" model="ir.cron">
+    <record id="send_stock_reorder_report_cron" model="ir.cron">
         <field name="name">Stock Reorder Report</field>
         <field name="model_id" ref="model_stock_quant" />
         <field name="user_id" ref="base.user_admin" />
