@@ -25,10 +25,9 @@ class JobApplicationController(http.Controller):
         # Fetch the job position
         job_position = request.env['job.position'].sudo().browse(job_position_id)
         if not job_position.exists():
-            _logger.warning(f"Job position with ID {job_position_id} does not exist.")
-            return request.render('website.404')
+            # Handle the case if the job position not exist
+            return request.render('website.page_404')
 
-        _logger.debug(f"Job position found: {job_position.name}")
         return request.render('online_job_application.job_application_form', {
             'job_position': job_position,
         })
@@ -48,13 +47,13 @@ class JobApplicationController(http.Controller):
             application_exists = request.env['job.application'].sudo().search([('email', '=', kwargs.get('email'))])
             if application_exists:
                 _logger.error(f"This candidate has already applied for this position.")
-                return request.render('website.404', {'error': "You have already applied for this position."})
+                return request.render('website.page_404', {'error': "You have already applied for this position."})
 
             # Get the resume file from the form
             resume_file = kwargs.get('resume')
             if not resume_file:
                 _logger.error("Resume file is missing in the application submission.")
-                return request.render('website.404', {'error': "Resume file is required."})
+                return request.render('website.page_404', {'error': "Resume file is required."})
 
             # Read and encode the resume file
             resume_data = resume_file.read()
@@ -67,7 +66,7 @@ class JobApplicationController(http.Controller):
 
             if not job_position.exists():
                 _logger.error(f"Job position with ID {job_position_id} does not exist.")
-                return request.render('website.404')
+                return request.render('website.page_404')
 
             _logger.debug(f"Job position found: {job_position.name}. Creating application...")
 
@@ -90,8 +89,8 @@ class JobApplicationController(http.Controller):
                 })
             else:
                 _logger.error("Failed to create the application.")
-                return request.render('website.404', {'error': "Failed to submit the application."})
+                return request.render('website.page_404', {'error': "Failed to submit the application."})
 
         except Exception as e:
             _logger.exception(f"An error occurred while submitting the application: {e}")
-            return request.render('website.404', {'error': "An unexpected error occurred."})
+            return request.render('website.page_404', {'error': "An unexpected error occurred."})

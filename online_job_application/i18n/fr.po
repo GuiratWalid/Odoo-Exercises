@@ -22,6 +22,9 @@ msgid ""
 "                This mail is sent when an application status is updated.\n"
 "            "
 msgstr ""
+"\n"
+"                Ce courrier est envoyé lorsqu'un statut de candidature est mis à jour.\n"
+"            "
 
 #. module: online_job_application
 #: model:mail.template,subject:online_job_application.email_template_application_status
@@ -30,6 +33,9 @@ msgid ""
 "                Your Application Status for \"{{object.job_position_id.name or ''}}\" Has Changed\n"
 "            "
 msgstr ""
+"\n"
+"                Le statut de candidature pour le poste \"{{object.job_position_id.name or ''}}\" a été modifié\n"
+"            "
 
 #. module: online_job_application
 #: model:mail.template,body_html:online_job_application.email_template_application_status
@@ -54,42 +60,61 @@ msgid ""
 "                </div>\n"
 "            "
 msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Cher(e)\n"
+"                        <span t-out=\"object.name\"/>,\n"
+"                    </p>\n"
+"                    <br/>\n"
+"                    <p>Le statut de candidature pour le poste <strong><span t-out=\"object.job_position_id.name\"/></strong> a été modifié:</p>\n"
+"                    <ul>\n"
+"                        <li>\n"
+"                            Statut:\n"
+"                            <strong><span t-out=\"object.state\"/></strong>\n"
+"                        </li>\n"
+"                    </ul>\n"
+"                    <p>Nous vous remercions de l'intérêt que vous portez à notre entreprise.</p>\n"
+"                    <br/>\n"
+"                    <p>Bien à vous,</p>\n"
+"                    <p>L'Equipe de recrutement</p>\n"
+"                </div>\n"
+"            "
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_position_form_view
 msgid "<span class=\"o_stat_text text-danger\">Unpublished</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text text-danger\">Non publié</span>"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_position_form_view
 msgid "<span class=\"o_stat_text text-success\">Published</span>"
-msgstr ""
+msgstr "<span class=\"o_stat_text text-success\">Publié</span>"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form_view
 msgid "Accept"
-msgstr ""
+msgstr "Accepter"
 
 #. module: online_job_application
 #: model:ir.model.fields.selection,name:online_job_application.selection__job_application__state__accepted
 msgid "Accepted"
-msgstr ""
+msgstr "Accepté"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Accepted Applications"
-msgstr ""
+msgstr "Candidatures Acceptées"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__application_date
 msgid "Application Date"
-msgstr ""
+msgstr "Date de candidature"
 
 #. module: online_job_application
 #: model:mail.template,name:online_job_application.email_template_application_status
 msgid "Application Status Update"
-msgstr ""
+msgstr "Mise à jour du statut de la demande"
 
 #. module: online_job_application
 #: model:ir.actions.act_window,name:online_job_application.job_application_action
@@ -97,91 +122,91 @@ msgstr ""
 #: model:ir.ui.menu,name:online_job_application.job_application_menu
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_position_form_view
 msgid "Applications"
-msgstr ""
+msgstr "Candidatures"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_positions_page
 msgid "Apply"
-msgstr ""
+msgstr "Postuler"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Apply for a Job"
-msgstr ""
+msgstr "Postuler à un emploi"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_positions_page
 msgid "Available Job Positions"
-msgstr ""
+msgstr "Postes disponibles"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Cover Letter:"
-msgstr ""
+msgstr "Lettre de motivation:"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__cover_letter
 msgid "Cover Name"
-msgstr ""
+msgstr "Nom de lettre"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__create_uid
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__create_date
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé sur"
 
 #. module: online_job_application
 #: model:ir.actions.client,name:online_job_application.online_job_dashboard_action
 #: model:ir.ui.menu,name:online_job_application.dashboard_menu
 msgid "Dashboard"
-msgstr ""
+msgstr "Tableau de Bord"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__description
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__display_name
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom d'Affichage"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__email
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Email:"
-msgstr ""
+msgstr "Email:"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Enter your email"
-msgstr ""
+msgstr "Entrez votre email"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Enter your name"
-msgstr ""
+msgstr "Entrez votre nom"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Enter your phone number"
-msgstr ""
+msgstr "Entrez votre numéro de téléphone"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__name
 msgid "Full Name"
-msgstr ""
+msgstr "Nom & Prènon"
 
 #. module: online_job_application
 #. odoo-javascript
@@ -194,244 +219,244 @@ msgstr ""
 #. module: online_job_application
 #: model:ir.model.fields.selection,name:online_job_application.selection__job_application__state__in_review
 msgid "In Review"
-msgstr ""
+msgstr "En cours d'examen"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "In Review Applications"
-msgstr ""
+msgstr "Candidature En cours d'examen"
 
 #. module: online_job_application
 #: model:ir.model.fields.selection,name:online_job_application.selection__job_application__state__interview
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form_view
 msgid "Interview"
-msgstr ""
+msgstr "Entretien prévu"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Interview Applications"
-msgstr ""
+msgstr "Candidature entretien prévu"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__job_position_id
 msgid "Job"
-msgstr ""
+msgstr "Emploi"
 
 #. module: online_job_application
 #: model:ir.ui.menu,name:online_job_application.online_job_application_menu
 msgid "Job Applications"
-msgstr ""
+msgstr "Candidatures"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 #: model:ir.model,name:online_job_application.model_job_position
 msgid "Job Position"
-msgstr ""
+msgstr "Poste"
 
 #. module: online_job_application
 #: model:ir.ui.menu,name:online_job_application.job_position_menu
 #: model:website.menu,name:online_job_application.website_menu_job_positions
 msgid "Job Positions"
-msgstr ""
+msgstr "Postes"
 
 #. module: online_job_application
 #: model:ir.model,name:online_job_application.model_job_application
 msgid "Job application management module"
-msgstr ""
+msgstr "Module de gestion des candidatures"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__write_uid
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__write_date
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__location
 msgid "Location"
-msgstr ""
+msgstr "Emplacement"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_positions_page
 msgid "No job positions available at the moment. Please check back later!"
-msgstr ""
+msgstr "Aucun poste n'est disponible pour le moment. Veuillez revenir plus tard !"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Online Job Application Dashboard"
-msgstr ""
+msgstr "Tableau de bord de candidature en ligne"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__phone
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Phone:"
-msgstr ""
+msgstr "Téléphone:"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__name
 msgid "Position Name"
-msgstr ""
+msgstr "Nom du poste"
 
 #. module: online_job_application
 #: model:ir.actions.act_window,name:online_job_application.job_position_action
 msgid "Positions"
-msgstr ""
+msgstr "Postes"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_position_list_view
 msgid "Published"
-msgstr ""
+msgstr "Publié"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Published Jobs"
-msgstr ""
+msgstr "Postes Publiés"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_position__is_published
 msgid "Published on Website"
-msgstr ""
+msgstr "Publié sur Site Web"
 
 #. module: online_job_application
 #: model:ir.model.fields.selection,name:online_job_application.selection__job_application__state__received
 msgid "Received"
-msgstr ""
+msgstr "Candidature reçue"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Received Applications"
-msgstr ""
+msgstr "Candidatures reçues"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__reference
 msgid "Reference"
-msgstr ""
+msgstr "Référence"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form_view
 msgid "Reject"
-msgstr ""
+msgstr "Refuser"
 
 #. module: online_job_application
 #: model:ir.model.fields.selection,name:online_job_application.selection__job_application__state__rejected
 msgid "Rejected"
-msgstr ""
+msgstr "Refusé"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Rejected Applications"
-msgstr ""
+msgstr "Candidatures refusés"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__resume
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_list_view
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_position_form_view
 msgid "Resume"
-msgstr ""
+msgstr "CV"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__resume_filename
 msgid "Resume Filename"
-msgstr ""
+msgstr "Nom du CV"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Resume:"
-msgstr ""
+msgstr "CV:"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_success
 msgid "Return to Home"
-msgstr ""
+msgstr "Retour à l'accueil"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form_view
 msgid "Review"
-msgstr ""
+msgstr "En cours d'examen"
 
 #. module: online_job_application
 #: model:ir.model.fields,field_description:online_job_application.field_job_application__state
 msgid "Status"
-msgstr ""
+msgstr "Statut"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_success
 msgid "Thank you for your application!"
-msgstr ""
+msgstr "Merci pour votre candidature !"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_success
 msgid "To track your application, please keep the following reference:"
-msgstr ""
+msgstr "Pour suivre votre candidature, merci de conserver la référence suivante :"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Total Applications"
-msgstr ""
+msgstr "Nombre total d'applications"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Total Candidates"
-msgstr ""
+msgstr "Nombre total de candidats"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Total Jobs"
-msgstr ""
+msgstr "Nombre total de postes"
 
 #. module: online_job_application
 #. odoo-javascript
 #: code:addons/online_job_application/static/src/xml/dashboard.xml:0
 msgid "Unpublished Jobs"
-msgstr ""
+msgstr "Postes non publiées"
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_success
 msgid "We will get back to you shortly."
-msgstr ""
+msgstr "Nous vous répondrons sous peu."
 
 #. module: online_job_application
 #: model:ir.model.fields,help:online_job_application.field_job_position__is_published
 msgid "Whether the job position is visible on the website or not."
-msgstr ""
+msgstr "Si le poste à pourvoir est visible sur le site ou non."
 
 #. module: online_job_application
 #: model_terms:ir.ui.view,arch_db:online_job_application.job_application_form
 msgid "Write your cover letter"
-msgstr ""
+msgstr "Rédigez votre lettre de motivation"
 
 #. module: online_job_application
 #. odoo-python
 #: code:addons/online_job_application/models/job_application.py:0
 #: model:ir.model.constraint,message:online_job_application.constraint_job_application_unique_application
 msgid "You have already applied for this position."
-msgstr ""
+msgstr "Vous avez déjà postulé pour ce poste."

@@ -21,8 +21,8 @@ class JobPositionController(http.Controller):
             _logger.info("Fetching published job positions for display.")
 
             # Fetch all published job positions
-            job_positions = request.env['job.posi1tion'].sudo().search([('is_published', '=', True)])
-
+            job_positions = request.env['job.position'].sudo().search([('is_published', '=', True)])
+            print(job_positions)
             if not job_positions:
                 _logger.warning("No published job positions found.")
             else:
@@ -35,6 +35,6 @@ class JobPositionController(http.Controller):
 
         except Exception as e:
             _logger.exception(f"An error occurred while fetching job positions: {e}")
-            return request.render('website.404', {
+            return request.render('website.page_404', {
                 'error_message': "An unexpected error occurred while loading job positions."
             })
