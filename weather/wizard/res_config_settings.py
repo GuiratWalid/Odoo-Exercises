@@ -1,4 +1,4 @@
-from odoo import models, fields ,api
+from odoo import models, fields
 
 
 class ResConfigSettings(models.TransientModel):
@@ -9,4 +9,9 @@ class ResConfigSettings(models.TransientModel):
     weather_api_key = fields.Char(
         string="Weather API Key",
         config_parameter="weather.weather_api_key"
+    )
+
+    position_stack_api_key = fields.Char(
+        string="Position Stack API Key",
+        config_parameter="weather.position_stack_api_key"
     )

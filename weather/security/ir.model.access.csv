@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 weather.access_weather_location,access_weather_location,weather.model_weather_location,base.group_user,1,1,1,1
 weather.access_weather_hourly_forecast,access_weather_hourly_forecast,weather.model_weather_hourly_forecast,base.group_user,1,1,1,1
 weather.access_weather_daily_forecast,access_weather_daily_forecast,weather.model_weather_daily_forecast,base.group_user,1,1,1,1
-weather.access_get_weather_forecast,access_get_weather_forecast,weather.model_get_weather_forecast,base.group_user,1,1,1,1
+weather.access_generate_daily_forecast_wizard,access_generate_daily_forecast_wizard,weather.model_generate_daily_forecast_wizard,base.group_user,1,1,1,1
+weather.access_weather_alert,access_weather_alert,weather.model_weather_alert,base.group_user,1,1,1,1

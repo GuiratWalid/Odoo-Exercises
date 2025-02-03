@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
+    <record id="weather_daily_forecast_list_view" model="ir.ui.view">
+        <field name="name">weather.daily.forecast.list</field>
+        <field name="model">weather.daily.forecast</field>
+        <field name="arch" type="xml">
+            <list string="Weather Daily Forecast" create="0" edit="0" default_order="date desc, location_id asc">
+                <field name="date"/>
+                <field name="location_id"/>
+                <field name="temp_current"/>
+                <field name="temp_min"/>
+                <field name="temp_max"/>
+                <field name="feels_like"/>
+                <field name="sunrise"/>
+                <field name="sunset"/>
+            </list>
+        </field>
+    </record>
+
     <record id="weather_daily_forecast_form_view" model="ir.ui.view">
         <field name="name">weather.daily.forecast.form</field>
         <field name="model">weather.daily.forecast</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Weather Daily Forecast" create="0" edit="0">
                 <sheet>
 
                     <div>
@@ -13,26 +30,44 @@
                             <field name="date"/>
                         </h3>
                         <h1>
-                            <field name="temp_current"/>
+                            <field name="temp_current"/>°C
                         </h1>
                     </div>
 
                     <group>
 
                         <group>
-                            <field name="temp_min"/>
-                            <field name="temp_current"/>
+                            <label for="temp_min" string="Low Temperature"/>
+                            <div style="display: inline-flex;">
+                                <field name="temp_min"/>
+                                <span>°C</span>
+                            </div>
+
+                            <label for="feels_like" string="Feels Like"/>
+                            <div style="display: inline-flex;">
+                                <field name="feels_like"/>
+                                <span>°C</span>
+                            </div>
                         </group>
 
                         <group>
-                            <field name="temp_max"/>
+                            <label for="temp_max" string="High Temperature"/>
+                            <div style="display: inline-flex;">
+                                <field name="temp_max"/>
+                                <span>°C</span>
+                            </div>
                             <field name="sunrise"/>
                             <field name="sunset"/>
                         </group>
 
                         <group>
                             <field name="condition"/>
-                            <field name="location_id"/>
+                            <label for="city" string="Location"/>
+                            <div class="o_address_format">
+                                <field name="city"/>
+                                <field name="state"/>
+                                <field name="country"/>
+                            </div>
                         </group>
 
                         <notebook>
@@ -40,9 +75,9 @@
                             <page name="hourly_forecast" string="Hourly Forecast">
 
                                 <field name="hourly_forecast_ids">
-                                    <list>
+                                    <list limit="8">
                                         <field name="time"/>
-                                        <field name="temperature" string="Temp"/>
+                                        <field name="temperature" string="Temp (°C)"/>
                                         <field name="feels_like"/>
                                         <field name="condition"/>
                                         <field name="uv_index"/>
@@ -52,20 +87,37 @@
                             </page>
 
                             <page name="current_condition" string="Current Condition">
+
                                 <group name="wind" string="Wind">
                                     <group>
-                                        <field name="wind_current"/>
+                                        <label for="wind_current" string="Wind"/>
+                                        <div style="display: inline-flex;">
+                                            <field name="wind_current"/>
+                                            <span>km/h</span>
+                                        </div>
                                         <field name="wind_degree"/>
                                         <field name="wind_direction"/>
                                     </group>
                                     <group>
-                                        <field name="wind_max"/>
-                                        <field name="wind_min"/>
+                                        <label for="wind_max" string="High Wind"/>
+                                        <div style="display: inline-flex;">
+                                            <field name="wind_max"/>
+                                            <span>km/h</span>
+                                        </div>
+                                        <label for="wind_min" string="Low Wind"/>
+                                        <div style="display: inline-flex;">
+                                            <field name="wind_min"/>
+                                            <span>km/h</span>
+                                        </div>
                                     </group>
                                 </group>
 
                                 <group name="humidity" string="Humidity">
-                                    <field name="humidity"/>
+                                    <label for="humidity" string="Humidity"/>
+                                    <div style="display: inline-flex;">
+                                        <field name="humidity"/>
+                                        <span>%</span>
+                                    </div>
                                 </group>
 
                                 <group name="uv_index" string="UV Index">
@@ -73,8 +125,36 @@
                                 </group>
 
                                 <group name="pressure" string="Pressure">
-                                    <field name="pressure"/>
+                                    <label for="pressure" string="Pressure"/>
+                                    <div style="display: inline-flex;">
+                                        <field name="pressure"/>
+                                        <span>mBar</span>
+                                    </div>
                                 </group>
+
+                                <group name="precipitation" string="Precipitation">
+                                    <label for="amount_precipitation" string="Amount Precipitation"/>
+                                    <div style="display: inline-flex;">
+                                        <field name="amount_precipitation"/>
+                                        <span>mm</span>
+                                    </div>
+                                </group>
+
+                            </page>
+
+                            <page name="hourly_details" string="Hourly Details">
+
+                                <field name="hourly_forecast_ids">
+                                    <list limit="8">
+                                        <field name="time"/>
+                                        <field name="humidity"/>
+                                        <field name="pressure"/>
+                                        <field name="wind_current"/>
+                                        <field name="wind_degree"/>
+                                        <field name="wind_direction"/>
+                                        <field name="amount_precipitation"/>
+                                    </list>
+                                </field>
 
                             </page>
 
@@ -84,6 +164,21 @@
 
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="weather_daily_forecast_search_view" model="ir.ui.view">
+        <field name="name">weather.daily.forecast.search.view</field>
+        <field name="model">weather.daily.forecast</field>
+        <field name="arch" type="xml">
+            <search string="Search Daily Forecast">
+                <field name="date"/>
+                <field name="location_id"/>
+                <group string=" Group By">
+                    <filter name="group_by_organizer_id" string="Location" context="{'group_by': 'location_id'}"/>
+                    <filter name="group_by_date" string="Date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

@@ -8,12 +8,18 @@
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
                 <app string="Weather" data-string="Weather" name="weather_management"
-                    logo="../static/description/icon.png">
+                    logo="/weather/static/description/icon.png">
                     <block title="Api Keys" name="weather_api_keys_block">
-                        <setting id="weather_api_keys_settings"
+                        <setting id="weather_api_key_settings"
                                  help="Login and get your Weather API Key from: https://www.weatherapi.com/"
                                  documentation="https://www.weatherapi.com/">
-                            <field name="weather_api_key" placeholder="Enter your API key" password="True"/>
+                            <field name="weather_api_key" placeholder="Enter your Weather API key" password="True"/>
+                        </setting>
+
+                        <setting id="position_stack_api_key_settings"
+                                 help="Login and get your Position Stack API Key from: https://www.positionstack.com/"
+                                 documentation="https://www.positionstack.com/">
+                            <field name="position_stack_api_key" placeholder="Enter your Position Stack API key" password="True"/>
                         </setting>
                     </block>
                 </app>

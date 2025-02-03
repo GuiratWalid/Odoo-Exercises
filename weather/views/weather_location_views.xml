@@ -5,12 +5,14 @@
         <field name="name">weather.location.list</field>
         <field name="model">weather.location</field>
         <field name="arch" type="xml">
-            <list>
+            <list default_order="name asc">
                 <field name="name"/>
-                <field name="state_id"/>
                 <field name="country_id"/>
+                <field name="state_id"/>
+                <field name="city"/>
                 <field name="latitude"/>
                 <field name="longitude"/>
+                <field name="user_ids" widget="many2many_tags"/>
             </list>
         </field>
     </record>
@@ -19,19 +21,42 @@
         <field name="name">weather.location.form</field>
         <field name="model">weather.location</field>
         <field name="arch" type="xml">
-            <form>
+            <form create="1">
+                <header>
+                    <button name="get_coordinates"
+                            type="object"
+                            string="Get Coordinates"
+                            class="btn-primary"
+                            invisible="latitude and longitude"
+                    />
+                </header>
                 <sheet>
+                    <div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-                            <field name="name"/>
-                            <field name="state_id" context="{'country_id': country_id}"/>
-                            <field name="country_id"/>
+                            <field name="country_id" readonly="latitude and longitude"/>
+                            <field name="state_id"
+                                   context="{'default_country_id': country_id}"
+                                   domain="country_id and [('country_id', '=', country_id)] or []"
+                                   readonly="latitude and longitude"
+                            />
+                            <field name="city" readonly="latitude and longitude"/>
                         </group>
 
                         <group>
                             <field name="latitude"/>
                             <field name="longitude"/>
                         </group>
+
+                        <notebook>
+                            <page name="users_list" string="Users List">
+                                <field name="user_ids"/>
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>

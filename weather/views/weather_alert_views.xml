@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="weather_alert_list_view" model="ir.ui.view">
+        <field name="name">weather.alert.list</field>
+        <field name="model">weather.alert</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="temp_max"/>
+                <field name="temp_min"/>
+                <field name="wind_max"/>
+                <field name="amount_precipitation_max"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="weather_alert_form_view" model="ir.ui.view">
+        <field name="name">weather.alert.form</field>
+        <field name="model">weather.alert</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group name="alerts_temperature" string="ALERTS TEMPERATURE">
+                            <label for="temp_max"/>
+                            <div class="o_row">
+                                <field name="temp_max" class="w-25"/>
+                                <span>°C</span>
+                            </div>
+                            <label for="temp_min"/>
+                            <div class="o_row">
+                                <field name="temp_min" class="w-25"/>
+                                <span>°C</span>
+                            </div>
+                        </group>
+
+                        <group name="right_group_1"/>
+
+                        <group name="alerts_wind" string="ALERTS WIND">
+                            <label for="wind_max"/>
+                            <div class="o_row">
+                                <field name="wind_max" class="w-25"/>
+                                <span>km/h</span>
+                            </div>
+                        </group>
+
+                        <group name="right_group_2"/>
+
+                        <group name="alerts_precipitation" string="ALERTS PRECIPITATION">
+                            <label for="amount_precipitation_max"/>
+                            <div class="o_row">
+                                <field name="amount_precipitation_max" class="w-25"/>
+                                <span>mm</span>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="weather_alert_action" model="ir.actions.act_window">
+        <field name="name">Weather Alerts</field>
+        <field name="res_model">weather.alert</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

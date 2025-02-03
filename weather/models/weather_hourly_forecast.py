@@ -3,7 +3,7 @@ from odoo import models, fields
 
 class WeatherHourlyForecast(models.Model):
     _name = "weather.hourly.forecast"
-    _description = "Stores hourly forecasts linked to a daily forecast."
+    _description = "Weather Hourly Forecasts"
 
     #=== General Fields ===#
 
@@ -36,4 +36,32 @@ class WeatherHourlyForecast(models.Model):
         string="Daily Forecast"
     )
 
+    #=== Wind Fields ===#
 
+    wind_current = fields.Float(
+        string="Wind (km/h)",
+        readonly=True
+    )
+    wind_degree = fields.Float(
+        string="Wind Degree",
+        readonly=True
+    )
+    wind_direction = fields.Char(
+        string="Wind Direction",
+        readonly=True
+    )
+
+    #=== Other Weather Details Fields ===#
+
+    humidity = fields.Integer(
+        string="Humidity (%)",
+        readonly=True
+    )
+    pressure = fields.Float(
+        string="Pressure (mBar)",
+        readonly=True
+    )
+    amount_precipitation = fields.Float(
+        string="Amount Precipitation (mm)",
+        readonly=True
+    )

@@ -1,0 +1,805 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* weather
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-03 14:24+0000\n"
+"PO-Revision-Date: 2025-02-03 14:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: weather
+#: model:ir.actions.report,print_report_name:weather.weather_alert_report_action
+msgid ""
+"\n"
+"                'Weather Alert Report for %s on %s' % (object.location_id.display_name, object.name)\n"
+"            "
+msgstr ""
+"\n"
+"                'تقرير التنبيه الجوي لـ %s بتاريخ %s' % (object.location_id.name, object.name)\n"
+"            "
+
+#. module: weather
+#: model:mail.template,body_html:weather.weather_alert_email_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        Tomorrow, the temperature may exceed “\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.temp_max\"/>\n"
+"                        </strong>\n"
+"                        ”, the wind speed may be more than “\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.wind_max\"/>\n"
+"                        </strong>\n"
+"                        ” and the total amount of precipitation is “\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.amount_precipitation\"/>\n"
+"                        </strong>\n"
+"                        ”.\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p>\n"
+"                        غدًا، قد تتجاوز درجة الحرارة «\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.temp_max\"/>\n"
+"                        </strong>\n"
+"                        »، وقد تتجاوز سرعة الرياح «\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.wind_max\"/>\n"
+"                        </strong>\n"
+"                        »، وستكون الكمية الإجمالية للهطول «\n"
+"                        <strong>\n"
+"                            <span t-out=\"object.amount_precipitation\"/>\n"
+"                        </strong>\n"
+"                        ».\n"
+"                    </p>\n"
+"                </div>\n"
+"            "
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "<span>%</span>"
+msgstr ""
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "<span>km/h</span>"
+msgstr "<span>كم/س</span>"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "<span>mBar</span>"
+msgstr "<span>ملي بار</span>"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "<span>mm</span>"
+msgstr "<span>مم</span>"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "<span>°C</span>"
+msgstr ""
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+msgid "ALERTS PRECIPITATION"
+msgstr "تنبيهات الهطول"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+msgid "ALERTS TEMPERATURE"
+msgstr "تنبيهات درجة الحرارة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_form_view
+msgid "ALERTS WIND"
+msgstr "تنبيهات الرياح"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_daily_forecast__state
+msgid ""
+"Administrative divisions of a country. E.g. Fed. State, Departement, Canton"
+msgstr ""
+"التقسيمات الإدارية للدولة. على سبيل المثال: الدولة الفيدرالية، القسم، "
+"الكانتون"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Amount Precipitation"
+msgstr "كمية الأمطار"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__amount_precipitation
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__amount_precipitation
+msgid "Amount Precipitation (mm)"
+msgstr "كمية الأمطار (مم)"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid "Api Keys"
+msgstr "مفاتيح API"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "CONDITION"
+msgstr "الحالة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__city
+#: model:ir.model.fields,field_description:weather.field_weather_location__city
+msgid "City"
+msgstr "مدينة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__condition
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__condition
+msgid "Condition"
+msgstr "الحالة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "Condition:"
+msgstr "الحالة"
+
+#. module: weather
+#: model:ir.model,name:weather.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: weather
+#: model:ir.ui.menu,name:weather.configurations_menu
+msgid "Configurations"
+msgstr "الإعدادات"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__country_id
+msgid "Country"
+msgstr "البلد"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__country
+msgid "Country Name"
+msgstr "اسم البلد"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__create_uid
+#: model:ir.model.fields,field_description:weather.field_weather_alert__create_uid
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__create_uid
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__create_uid
+#: model:ir.model.fields,field_description:weather.field_weather_location__create_uid
+msgid "Created by"
+msgstr "أنشأه"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__create_date
+#: model:ir.model.fields,field_description:weather.field_weather_alert__create_date
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__create_date
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__create_date
+#: model:ir.model.fields,field_description:weather.field_weather_location__create_date
+msgid "Created on"
+msgstr "تم الإنشاء في"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Current Condition"
+msgstr "الحالة الحالية"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__temp_current
+msgid "Current Temperature (°C)"
+msgstr "درجة الحرارة الحالية (°C)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__daily_forecast_id
+msgid "Daily Forecast"
+msgstr "التوقعات اليومية"
+
+#. module: weather
+#: model:ir.actions.act_window,name:weather.weather_daily_forecast_action
+#: model:ir.ui.menu,name:weather.daily_forecast_menu
+msgid "Daily Forecasts"
+msgstr "التوقعات اليومية"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__date
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_search_view
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__date_from
+msgid "Date From"
+msgstr "تاريخ البدء"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Date from must be between {} and {}."
+msgstr ".{} يجب أن يكون تاريخ البدء بين {} و"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__days_forecast
+msgid "Days Forecast"
+msgstr "عدد الأيام"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Days forecast must be between 1 and 3."
+msgstr ".يجب أن يكون عدد الأيام المتوقع بين 1 و 3"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.generate_daily_forecast_wizard_view_form
+msgid "Discard"
+msgstr "إلغاء"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__display_name
+#: model:ir.model.fields,field_description:weather.field_weather_alert__display_name
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__display_name
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__display_name
+#: model:ir.model.fields,field_description:weather.field_weather_location__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid "Enter your Position Stack API key"
+msgstr "أدخل مفتاح API الخاص بك من Position Stack"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid "Enter your Weather API key"
+msgstr "أدخل مفتاح API الخاص بك للطقس"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "FEELS LIKE"
+msgstr "يشعر وكأن"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Failed to create a daily forecast. Please try again later."
+msgstr ".فشل في إنشاء التنبؤ اليومي. يرجى المحاولة مرة أخرى لاحقًا"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Failed to generate weather forecast. Please contact support."
+msgstr ".فشل في توليد التنبؤات الجوية. يرجى الاتصال بالدعم"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Failed to generate weather forecast. Please try again later."
+msgstr ".فشل في توليد التنبؤات الجوية. يرجى المحاولة مرة أخرى لاحقًا"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Feels Like"
+msgstr "يشعر وكأن"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__feels_like
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__feels_like
+msgid "Feels Like (°C)"
+msgstr "يشعر وكأن (°C)"
+
+#. module: weather
+#: model:ir.ui.menu,name:weather.forecast_menu
+msgid "Forecasts"
+msgstr "التوقعات"
+
+#. module: weather
+#: model:ir.actions.act_window,name:weather.generate_daily_forecast_action
+#: model:ir.ui.menu,name:weather.generate_daily_forecast_menu
+msgid "Generate Daily Forecast"
+msgstr "توليد التوقعات اليومية"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.generate_daily_forecast_wizard_view_form
+msgid "Generate Weather Forecast"
+msgstr "توليد التوقعات الجوية"
+
+#. module: weather
+#: model:ir.model,name:weather.model_generate_daily_forecast_wizard
+msgid "Generate daily weather forecast"
+msgstr "توليد التوقعات الجوية اليومية"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_location_form_view
+msgid "Get Coordinates"
+msgstr "الحصول على الإحداثيات"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_search_view
+msgid "Group By"
+msgstr "مجموعة حسب"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "High Temperature"
+msgstr "درجة الحرارة العالية"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__temp_max
+msgid "High Temperature (°C)"
+msgstr "درجة الحرارة العالية (°C)"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "High Temperature:"
+msgstr ":درجة الحرارة العالية"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "High Wind"
+msgstr "رياح شديدة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__wind_max
+msgid "High Wind (km/h)"
+msgstr "رياح شديدة (كم/س)"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Hourly Details"
+msgstr "تفاصيل الساعة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Hourly Forecast"
+msgstr "التوقعات الساعة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__hourly_forecast_ids
+msgid "Hourly Forecasts"
+msgstr "التوقعات الساعة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Humidity"
+msgstr "الرطوبة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__humidity
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__humidity
+msgid "Humidity (%)"
+msgstr "الرطوبة (%)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__id
+#: model:ir.model.fields,field_description:weather.field_weather_alert__id
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__id
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__id
+#: model:ir.model.fields,field_description:weather.field_weather_location__id
+msgid "ID"
+msgstr "الهوية"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__write_uid
+#: model:ir.model.fields,field_description:weather.field_weather_alert__write_uid
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__write_uid
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__write_uid
+#: model:ir.model.fields,field_description:weather.field_weather_location__write_uid
+msgid "Last Updated by"
+msgstr "تم التحديث آخر مرة بواسطة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__write_date
+#: model:ir.model.fields,field_description:weather.field_weather_alert__write_date
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__write_date
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__write_date
+#: model:ir.model.fields,field_description:weather.field_weather_location__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__latitude
+msgid "Latitude"
+msgstr "خط العرض"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_location__latitude
+msgid "Latitude of the location"
+msgstr "خط العرض للموقع"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_location__user_ids
+msgid "List of users to receive alert emails"
+msgstr "قائمة المستخدمين لتلقي رسائل التنبيه"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_generate_daily_forecast_wizard__location_id
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__location_id
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_search_view
+msgid "Location"
+msgstr "الموقع"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__name
+msgid "Location Name"
+msgstr "اسم الموقع"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/models/weather_location.py:0
+msgid "Location not found! Please verify the location."
+msgstr ".الموقع غير موجود! يرجى التحقق من الموقع"
+
+#. module: weather
+#: model:ir.actions.act_window,name:weather.weather_location_action
+msgid "Locations"
+msgstr "المواقع"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid ""
+"Login and get your Position Stack API Key from: "
+"https://www.positionstack.com/"
+msgstr ""
+"قم بتسجيل الدخول واحصل على مفتاح API الخاص بـ Position Stack من: "
+"https://www.positionstack.com/"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid "Login and get your Weather API Key from: https://www.weatherapi.com/"
+msgstr ""
+"قم بتسجيل الدخول واحصل على مفتاح API الخاص بـ Weather من: "
+"https://www.weatherapi.com/"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__longitude
+msgid "Longitude"
+msgstr "خط الطول"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_location__longitude
+msgid "Longitude of the location"
+msgstr "خط الطول للموقع"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Low Temperature"
+msgstr "درجة الحرارة المنخفضة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__temp_min
+msgid "Low Temperature (°C)"
+msgstr "درجة الحرارة المنخفضة (°C)"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "Low Temperature:"
+msgstr ":درجة الحرارة المنخفضة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Low Wind"
+msgstr "ريح خفيفة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__wind_min
+msgid "Low Wind (km/h)"
+msgstr "ريح خفيفة (كم/س)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_alert__amount_precipitation_max
+msgid "Max Amount Precipitation"
+msgstr "أقصى كمية هطول الأمطار"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_alert__temp_max
+msgid "Max Temperature"
+msgstr "أقصى درجة حرارة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_alert__wind_max
+msgid "Max Wind"
+msgstr "أقصى سرعة للرياح"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_alert__temp_min
+msgid "Min Temperature"
+msgstr "أدنى درجة حرارة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_alert__name
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_hourly_forecast__feels_like
+msgid "Perceived temperature at the specified time"
+msgstr "درجة الحرارة المدركة في الوقت المحدد"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_res_config_settings__position_stack_api_key
+msgid "Position Stack API Key"
+msgstr "مفتاح API لـ Position Stack"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Precipitation"
+msgstr "هطول الأمطار"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Pressure"
+msgstr "الضغط"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__pressure
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__pressure
+msgid "Pressure (mBar)"
+msgstr "الضغط (ملي بار)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__state_id
+msgid "Region"
+msgstr "المنطقة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_search_view
+msgid "Search Daily Forecast"
+msgstr "بحث في التوقعات اليومية"
+
+#. module: weather
+#: model:mail.template,description:weather.weather_alert_email_template
+msgid "Sent to notify users about the weather alert."
+msgstr ".تم الإرسال لإشعار المستخدمين بشأن تنبيه الطقس"
+
+#. module: weather
+#: model:ir.actions.act_window,name:weather.weather_config_settings_action
+#: model:ir.ui.menu,name:weather.weather_config_settings_menu
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__state
+msgid "State Name"
+msgstr "اسم المدينة"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__sunrise
+msgid "Sunrise Time"
+msgstr "وقت شروق الشمس"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "Sunrise:"
+msgstr ":شروق الشمس"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__sunset
+msgid "Sunset Time"
+msgstr "وقت غروب الشمس"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "Sunset:"
+msgstr ":غروب الشمس"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "TEMPERATURE"
+msgstr "الْحَرَارَة"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "TIME"
+msgstr "الزَّمَن"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Temp (°C)"
+msgstr "الحرارة (°C)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__temperature
+msgid "Temperature (°C)"
+msgstr "درجة الحرارة (°C)"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_hourly_forecast__temperature
+msgid "Temperature at the specified time"
+msgstr "درجة الحرارة في الوقت المحدد"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "The forecast for the {} region on {} already exists."
+msgstr ".التوقعات للمنطقة {} في {} موجودة بالفعل"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/models/weather_alert.py:0
+msgid ""
+"The minimum temperature \"%s°C\" cannot be higher than the maximum "
+"temperature \"%s°C\"."
+msgstr ""
+"لا يمكن أن تكون درجة الحرارة الدنيا \"%s°C\" أعلى من درجة الحرارة القصوى "
+"\"%s°C\"."
+
+#. module: weather
+#: model:ir.model.constraint,message:weather.constraint_weather_location_unique_location
+msgid "This location is already exists!"
+msgstr "!هذا الموقع موجود بالفعل"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__time
+msgid "Time"
+msgstr "الوقت"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_daily_forecast__sunrise
+msgid "Time of sunrise, e.g., 06:30 AM"
+msgstr "وقت شروق الشمس، على سبيل المثال، 06:30 صباحًا"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_daily_forecast__sunset
+msgid "Time of sunset, e.g., 06:30 PM"
+msgstr "وقت غروب الشمس، على سبيل المثال، 06:30 مساءً"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_hourly_forecast__time
+msgid "Time of the forecast (e.g., 01:00 AM)"
+msgstr "وقت التوقعات (على سبيل المثال، 01:00 صباحًا)"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "UV INDEX"
+msgstr "مؤشر الأشعة فوق البنفسجية"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__uv_index
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__uv_index
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "UV Index"
+msgstr "مؤشر الأشعة فوق البنفسجية"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_hourly_forecast__uv_index
+msgid "UV Index at the specified time"
+msgstr "مؤشر الأشعة فوق البنفسجية في الوقت المحدد"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/models/weather_location.py:0
+msgid ""
+"Unable to retrieve location coordinates. Please contact support for "
+"assistance."
+msgstr ""
+"Impossible de récupérer les coordonnées de l'emplacement. Veuillez contacter"
+" le support pour obtenir de l'aide."
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_location__user_ids
+msgid "Users"
+msgstr "المستخدمين"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_location_form_view
+msgid "Users List"
+msgstr "قائمة المستخدمين"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: weather
+#: model:ir.ui.menu,name:weather.weather_menu
+#: model_terms:ir.ui.view,arch_db:weather.res_config_settings_view_form
+msgid "Weather"
+msgstr "الطقس"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_res_config_settings__weather_api_key
+msgid "Weather API Key"
+msgstr "مفتاح API للطقس"
+
+#. module: weather
+#. odoo-python
+#: code:addons/weather/wizard/generate_daily_forecast_wizard.py:0
+msgid ""
+"Weather API Key is not configured. Please set it in the system parameters."
+msgstr "لم يتم تكوين مفتاح API Weather. يرجى تعيينه في إعدادات النظام"
+
+#. module: weather
+#: model:ir.actions.server,name:weather.send_weather_alert_cron_ir_actions_server
+#: model:mail.template,subject:weather.weather_alert_email_template
+msgid "Weather Alert"
+msgstr "تنبيه الطقس"
+
+#. module: weather
+#: model:mail.template,name:weather.weather_alert_email_template
+msgid "Weather Alert Email Template"
+msgstr "قالب بريد إلكتروني لتنبيه الطقس"
+
+#. module: weather
+#: model:ir.actions.report,name:weather.weather_alert_report_action
+#: model_terms:ir.ui.view,arch_db:weather.weather_alert_report_template
+msgid "Weather Alert Report"
+msgstr "تقرير تنبيه الطقس"
+
+#. module: weather
+#: model:ir.actions.act_window,name:weather.weather_alert_action
+#: model:ir.model,name:weather.model_weather_alert
+#: model:ir.ui.menu,name:weather.weather_alert_menu
+msgid "Weather Alerts"
+msgstr "تنبيهات الطقس"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_list_view
+msgid "Weather Daily Forecast"
+msgstr "توقعات الطقس اليومية"
+
+#. module: weather
+#: model:ir.model,name:weather.model_weather_daily_forecast
+msgid "Weather Daily Forecasts"
+msgstr "توقعات الطقس اليومية"
+
+#. module: weather
+#: model:ir.model,name:weather.model_weather_hourly_forecast
+msgid "Weather Hourly Forecasts"
+msgstr "توقعات الطقس حسب الساعة"
+
+#. module: weather
+#: model:ir.model,name:weather.model_weather_location
+#: model:ir.ui.menu,name:weather.weather_location_menu
+msgid "Weather Locations"
+msgstr "مواقع الطقس"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_hourly_forecast__condition
+msgid "Weather condition (e.g., Clear, Rainy)"
+msgstr "حالة الطقس (على سبيل المثال، صافٍ، ممطر)"
+
+#. module: weather
+#: model:ir.model.fields,help:weather.field_weather_daily_forecast__condition
+msgid "Weather condition, e.g., Clear, Rainy"
+msgstr "حالة الطقس، على سبيل المثال، صافٍ، ممطر"
+
+#. module: weather
+#: model_terms:ir.ui.view,arch_db:weather.weather_daily_forecast_form_view
+msgid "Wind"
+msgstr "ريح"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__wind_current
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__wind_current
+msgid "Wind (km/h)"
+msgstr "الريح (كم/س)"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__wind_degree
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__wind_degree
+msgid "Wind Degree"
+msgstr "درجة الرياح"
+
+#. module: weather
+#: model:ir.model.fields,field_description:weather.field_weather_daily_forecast__wind_direction
+#: model:ir.model.fields,field_description:weather.field_weather_hourly_forecast__wind_direction
+msgid "Wind Direction"
+msgstr "اتجاه الرياح"

@@ -17,9 +17,9 @@
                   action="weather_daily_forecast_action"
                   sequence="10"
         />
-        <menuitem name="Generate Weather Forecast"
-                  id="generate_weather_forecast_menu"
-                  action="generate_weather_forecast_action"
+        <menuitem name="Generate Daily Forecast"
+                  id="generate_daily_forecast_menu"
+                  action="generate_daily_forecast_action"
                   sequence="20"
         />
     </menuitem>
@@ -38,6 +38,11 @@
                   id="weather_location_menu"
                   action="weather_location_action"
                   sequence="20"
+        />
+        <menuitem name="Weather Alerts"
+                  id="weather_alert_menu"
+                  action="weather_alert_action"
+                  sequence="30"
         />
     </menuitem>
 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="weather_alert_report_template">
+        <!-- Use the default external layout provided by Odoo -->
+        <t t-call="web.external_layout">
+            <div class="page">
+                <main>
+                    <div class="oe_structure">
+                        <t t-foreach="docs" t-as="forecast">
+                            <!-- Header section with static weather details -->
+                            <h1 class="text-center mb-5">Weather Alert Report</h1>
+                            <div class="row mb-4">
+                                <p style="font-size: 20px;">
+                                    <strong>
+                                        <span>
+                                            <t t-esc="forecast.name"/>
+                                        </span>
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        <span>
+                                            <t t-esc="forecast.temp_current"/>
+                                        </span>
+                                         °C
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <!-- Location (city, state, country) -->
+                            <div class="row mb-4">
+                                <p style="font-size: 20px;">
+                                    <strong>
+                                        <span>
+                                            <t t-esc="forecast.location_id.city"/>
+                                        </span>
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        <span>
+                                            <t t-esc="forecast.location_id.state_id.name"/>
+                                        </span>
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        <span>
+                                            <t t-esc="forecast.location_id.country_id.name"/>
+                                        </span>
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <!-- Additional weather information (low temperature, high temperature, sunrise, sunset) -->
+                            <div class="row mb-4">
+                                <p style="font-size: 20px;">
+                                    <strong>
+                                        Low Temperature:
+                                        <span>
+                                            <t t-esc="forecast.temp_min"/>
+                                        </span>
+                                         °C
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        High Temperature:
+                                        <span>
+                                            <t t-esc="forecast.temp_max"/>
+                                        </span>
+                                          °C
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        Condition:
+                                        <span>
+                                            <t t-esc="forecast.condition"/>
+                                        </span>
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        Sunrise:
+                                        <span>
+                                            <t t-esc="forecast.sunrise"/>
+                                        </span>
+                                    </strong>
+                                    <br/>
+                                    <strong>
+                                        Sunset:
+                                        <span>
+                                            <t t-esc="forecast.sunset"/>
+                                        </span>
+                                    </strong>
+                                </p>
+                            </div>
+
+                            <!-- Dynamic table displaying weather hourly forecast data -->
+                            <table class="table table-bordered table-striped">
+                                <thead class="thead-dark">
+                                    <tr style="font-size: 20px;">
+                                        <!-- Table headers -->
+                                        <th>TIME</th>
+                                        <th>TEMPERATURE</th>
+                                        <th>FEELS LIKE</th>
+                                        <th>CONDITION</th>
+                                        <th>UV INDEX</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Loop through forecast hourly lines and display each row dynamically -->
+                                    <t t-foreach="forecast.hourly_forecast_ids" t-as="hourly_forecast">
+                                        <tr style="font-size: 20px;">
+                                            <td>
+                                                <t t-esc="hourly_forecast.time[11:] + ':00'"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="str(hourly_forecast.temperature) + ' °C'"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="str(hourly_forecast.feels_like) + ' °C'"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="hourly_forecast.condition"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="hourly_forecast.uv_index"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </t>
+                    </div>
+                </main>
+            </div>
+        </t>
+    </template>
+</odoo>
