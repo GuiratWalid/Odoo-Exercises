@@ -38,7 +38,7 @@ You can either use the API directly or a Python library.
     - Forecast Days
     - Location
    
-    Use the web service or the "Weather API" library to generate the necessary data.
+    Use the web service or the **"Weather API"** library to generate the necessary data.
     
 ![Generate Daily Forecast Form](images/generate_daily_forecast_form.png)
 
@@ -47,14 +47,17 @@ You can either use the API directly or a Python library.
 3. **Add a configuration menu consisting of:**
 
 * A view to retrieve the *****"API KEY"***** for the web services.
+
+![Generate Daily Forecast Form](images/settings_form.png)
+
+
+
 * A view to add the list of locations, with the following fields for each location:
     - Name
     - Region
     - Country
     - Latitude
     - Longitude
-   
-    Use the web service or the "Weather API" library to generate the necessary data.
 
 > **Note:** You can use a web service or a library to add the coordinates (latitude, longitude) for a location. It is suggested to use [https://positionstack.com/](https://positionstack.com/).
     
